@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Tomato</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="title_personcenter">Me</string>
+    <string name="title_activity_tab">TabActivity</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
+
+    <string name="person_center_menu_one">菜单一</string>
+    <string name="person_center_menu_two">菜单二</string>
+    <string name="person_center_menu_three">菜单三</string>
+
+</resources>
