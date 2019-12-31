@@ -57,7 +57,7 @@ public class DashboardFragment extends Fragment {
                 textView2.setText(userBeanList.get(1).getName()+"");
                 textView3.setText(userBeanList.get(2).getPhone()+"");
                 textView4.setText(userBeanList.get(3).getAddress()+"");
-                textView5.setText(userBeanList.get(1).getAddData()+"");
+                textView5.setText(userBeanList.get(4).getAddData()+"");
             }
         });
 

@@ -3,7 +3,7 @@ package com.ultimate.www.component_application.data;
 public class PersonCenterMenuBean {
 
     private int menuIcon;//菜单icon资源id
-    private String menuName;//菜单名字
+    private int menuName;//菜单名字
 
     public int getMenuIcon() {
         return menuIcon;
@@ -13,11 +13,11 @@ public class PersonCenterMenuBean {
         this.menuIcon = menuIcon;
     }
 
-    public String getMenuName() {
+    public int getMenuName() {
         return menuName;
     }
 
-    public void setMenuName(String menuName) {
+    public void setMenuName(int menuName) {
         this.menuName = menuName;
     }
 }

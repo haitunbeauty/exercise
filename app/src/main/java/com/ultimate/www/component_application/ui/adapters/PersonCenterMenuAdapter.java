@@ -8,9 +8,9 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.bumptech.glide.Glide;
 import com.ultimate.www.component_application.R;
 import com.ultimate.www.component_application.data.PersonCenterMenuBean;
+import com.ultimate.www.component_application.utils.GlideUtils;
 
 
 import java.util.ArrayList;
@@ -62,10 +62,22 @@ public class PersonCenterMenuAdapter extends BaseAdapter {
             viewHolder = (ViewHolder) convertView.getTag();
         }
 
-        viewHolder.menuNames.setText(list.get(position).getMenuName());
+        viewHolder.menuNames.setText(context.getResources().getString(list.get(position).getMenuName()));
         int menuIcon = list.get(position).getMenuIcon();
-        Glide.with(context).load(context.getResources().getDrawable(menuIcon)).into(viewHolder.menuIcon);
-        Glide.with(context).load(context.getResources().getDrawable(R.mipmap.ic_common_next)).into(viewHolder.menuNext);
+        GlideUtils.setRadius(
+                context,
+                "https://upload.wikimedia.org/wikipedia/commons/2/29/Beetroot_jm26647.jpg",
+                menuIcon,
+                viewHolder.menuIcon,
+                20
+        );
+        GlideUtils.setRadius(
+                context,
+                "",
+                R.mipmap.ic_common_next,
+                viewHolder.menuNext,
+                1
+        );
         return convertView;
     }
 

@@ -94,7 +94,7 @@ public class PersonCenterGridViewMenuAdapter extends BaseAdapter {
             viewHolder.unReandMsg.setVisibility(View.GONE);
         }
 
-        viewHolder.menuNames.setText(list.get(position).getMenuName());
+        viewHolder.menuNames.setText(context.getResources().getString(list.get(position).getMenuName()));
         int menuIcon = list.get(position).getMenuIcon();
         Glide.with(context).load(context.getResources().getDrawable(menuIcon)).into(viewHolder.menuIcon);
         return convertView;

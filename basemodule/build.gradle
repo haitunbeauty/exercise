@@ -1,0 +1,86 @@
+if (isPlugin.toBoolean()) {
+    apply plugin: 'com.android.application'
+} else {
+    apply plugin: 'com.android.library'
+
+}
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.2"
+
+
+    defaultConfig {
+        if (isPlugin.toBoolean()) {
+            applicationId "com.ultimate.www.basemodule"
+        }
+        minSdkVersion 23
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [AROUTER_MODULE_NAME: project.getName()]
+            }
+        }
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    sourceSets {
+        main {
+            if (isPlugin.toBoolean()) {
+                manifest.srcFile 'src/main/AndroidManifest.xml'
+            } else {
+                manifest.srcFile 'src/main/release/AndroidManifest.xml'
+            }
+        }
+    }
+
+}
+
+dependencies {
+
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
+
+    //数据库
+//    def room_version = "2.2.0-rc01"
+//    api "androidx.room:room-runtime:$room_version"
+//    annotationProcessor "androidx.room:room-compiler:$room_version" // For Kotlin use kapt instead of annotationProcessor
+
+    //分页库
+    api 'android.arch.paging:runtime:1.0.0'
+
+    //权限
+    api 'pub.devrel:easypermissions:3.0.0'
+
+    //网络框架
+    api 'com.amitshekhar.android:android-networking:1.0.2'
+
+    //图片加载
+    api 'com.github.bumptech.glide:glide:4.10.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.10.0'
+
+    //本地数据安全库(加密库) def security_version = "1.0.0-alpha02"
+    api "androidx.security:security-crypto:1.0.0-alpha02"
+
+    //组件式路由架构
+    // Replace with the latest version
+    implementation "com.alibaba:arouter-api:1.5.0"
+    annotationProcessor "com.alibaba:arouter-compiler:1.2.2"
+
+}

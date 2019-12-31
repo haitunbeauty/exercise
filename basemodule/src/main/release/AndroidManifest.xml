@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.ultimate.www.basemodule">
+
+    <application>
+        <service android:name=".aidl.PluginProviderService">
+            <intent-filter>
+                <action android:name="android.intent.action.PROVIDER_MAIN_ACTION"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </service>
+
+        <activity android:name=".CommonBaseEnptyActivity">
+            <intent-filter>
+                <data
+                    android:host="com.app.test"
+                    android:path="/app"
+                    android:port="8888"
+                    android:scheme="test"
+                    tools:ignore="AppLinkUrlError" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.BROWSABLE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".CommonBaseFullscreenActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:theme="@style/FullscreenTheme" />
+    </application>
+
+</manifest>

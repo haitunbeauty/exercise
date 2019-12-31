@@ -18,10 +18,10 @@
         tools:layout="@layout/fragment_dashboard" />
 
     <fragment
-        android:id="@+id/navigation_notifications"
-        android:name="com.ultimate.www.component_application.ui.notifications.NotificationsFragment"
-        android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_notifications" />
+        android:id="@+id/navigation_function"
+        android:name="com.ultimate.www.component_application.ui.function.FunctionFragment"
+        android:label="@string/title_function"
+        tools:layout="@layout/fragment_function" />
 
     <fragment
         android:id="@+id/navigation_personcenter"
